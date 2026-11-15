@@ -169,6 +169,32 @@
             transform: translateY(-2px);
         }
 
+        /* Floating Sound Toggle Button */
+        .sound-toggle-container {
+            text-align: right;
+            padding: 15px 20px 0;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .sound-btn {
+            background: var(--red);
+            color: white;
+            border: 1px solid var(--gold);
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.2s;
+        }
+
+        .sound-btn:hover {
+            background: #560d16;
+        }
+
         /* Main Detailed Invitation Page */
         #invitation-page {
             background: var(--paper);
@@ -176,7 +202,7 @@
 
         header {
             text-align: center;
-            padding: 30px 10px 10px;
+            padding: 15px 10px 10px;
         }
 
         .smallcaps {
@@ -418,6 +444,12 @@
     <!-- DETAILED INVITATION PAGE -->
     <div id="invitation-page" hidden>
         <div class="topline"></div>
+        
+        <!-- SOUND TOGGLE BUTTON CONTAINER -->
+        <div class="sound-toggle-container">
+            <button type="button" id="sound-toggle-btn" class="sound-btn">🔊 Music On</button>
+        </div>
+
         <header>
             <p class="smallcaps">Traditional Telugu Wedding · తెలుగు వివాహ వేడుక</p>
             <h2 class="telugu-header">శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు</h2>
@@ -589,6 +621,7 @@
         const page = document.getElementById("invitation-page");
         const openBtn = document.getElementById("open-invitation");
         const weddingSong = document.getElementById("wedding-song");
+        const soundToggleBtn = document.getElementById("sound-toggle-btn");
 
         openBtn.addEventListener("click", () => {
             cover.style.display = "none";
@@ -598,7 +631,22 @@
             // Play background music
             weddingSong.play().catch(error => {
                 console.log("Audio playback prevented or failed:", error);
+                soundToggleBtn.textContent = "🔇 Sound Off";
             });
+        });
+
+        // Toggle Sound On/Off Button Logic
+        soundToggleBtn.addEventListener("click", () => {
+            if (weddingSong.paused) {
+                weddingSong.play().then(() => {
+                    soundToggleBtn.textContent = "🔊 Music On";
+                }).catch(err => {
+                    console.log("Playback failed:", err);
+                });
+            } else {
+                weddingSong.pause();
+                soundToggleBtn.textContent = "🔇 Sound Off";
+            }
         });
 
         // Countdown timer targeting November 25, 2026 at 20:27:00
