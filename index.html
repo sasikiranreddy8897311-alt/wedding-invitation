@@ -371,6 +371,9 @@
 </head>
 <body>
 
+    <!-- BACKGROUND MUSIC PLAYER -->
+    <audio id="wedding-song" src="wedding_music.mp3" preload="auto" loop></audio>
+
     <!-- COVER SECTION WITH FLORAL FRAME -->
     <section class="cover-shell" id="invitation-cover">
         <div class="cover">
@@ -581,15 +584,21 @@
             });
         })();
 
-        // Click handler to open the invitation
+        // Click handler to open the invitation and play background music
         const cover = document.getElementById("invitation-cover");
         const page = document.getElementById("invitation-page");
         const openBtn = document.getElementById("open-invitation");
+        const weddingSong = document.getElementById("wedding-song");
 
         openBtn.addEventListener("click", () => {
             cover.style.display = "none";
             page.hidden = false;
             window.scrollTo(0, 0);
+
+            // Play background music
+            weddingSong.play().catch(error => {
+                console.log("Audio playback prevented or failed:", error);
+            });
         });
 
         // Countdown timer targeting November 25, 2026 at 20:27:00
