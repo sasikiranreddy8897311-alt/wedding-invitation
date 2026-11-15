@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G. Ravi Kiran Reddy & Arekuti Sai Keerthana · Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Serif+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper: #fff8e9;
+            --red: #7d242a;
+            --gold: #b08337;
+            --green: #284b39;
+            --ink: #513c30;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 25px;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Georgia, 'Noto Serif Telugu', serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .topline, .bottomline {
+            height: 7px;
+            background: repeating-linear-gradient(90deg, var(--red) 0 20px, #c69948 20px 40px);
+        }
+
+        .wrap {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* Cover Section with Floral Frame */
+        .cover-shell {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(ellipse at center, #fff9ed, #ead7b4);
+            padding: 20px 10px;
+        }
+
+        .cover {
+            position: relative;
+            width: min(100%, 560px);
+            min-height: 700px;
+            background: var(--paper);
+            background-image: radial-gradient(circle at center, #fffef9 0%, #f9f3e1 100%);
+            box-shadow: 0 18px 45px rgba(74, 59, 44, 0.18);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 30px 50px;
+            border-radius: 8px;
+        }
+
+        .floral-frame {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 4;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .telugu-mantra {
+            font-family: 'Noto Serif Telugu', serif;
+            font-size: 1.5rem;
+            color: var(--red);
+            margin-bottom: 8px;
+        }
+
+        .blessing-text {
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .invite-intro {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin-bottom: 14px;
+        }
+
+        .cover-names {
+            font-size: 2rem;
+            color: var(--red);
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .cover-names span {
+            display: block;
+        }
+
+        .cover-names em {
+            font-size: 1.4rem;
+            color: var(--gold);
+            font-style: normal;
+            margin: 4px 0;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 18px auto;
+            max-width: 180px;
+            color: var(--gold);
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            height: 1px;
+            background: var(--gold);
+            flex: 1;
+            opacity: 0.6;
+        }
+
+        .open-btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 260px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #8e212e 0%, #560d16 100%);
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1.5px solid #d4af37;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(102, 18, 28, 0.25);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .open-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Main Detailed Invitation Page */
+        #invitation-page {
+            background: var(--paper);
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 10px 10px;
+        }
+
+        .smallcaps {
+            font: 10px/1.8 Arial, sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .telugu-header {
+            font-family: 'Noto Serif Telugu', serif;
+            font-size: 1.6rem;
+            color: var(--red);
+            margin: 8px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            font: 11px/1.8 Arial, sans-serif;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--red);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(176, 131, 55, 0.4);
+        }
+
+        nav a:hover {
+            border-color: var(--red);
+        }
+
+        .section-box {
+            padding: 35px 10px;
+            text-align: center;
+            border-bottom: 1px dashed rgba(176, 131, 55, 0.4);
+        }
+
+        .section-box:last-of-type {
+            border-bottom: none;
+        }
+
+        h2.section-title {
+            font-family: 'Noto Serif Telugu', serif;
+            font-size: 1.8rem;
+            color: var(--red);
+            margin: 8px 0 15px;
+        }
+
+        /* Hero Ceremony Banner Styles */
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .ceremony-hero {
+            max-width: 100%;
+            width: 100%;
+            margin: 15px auto 20px;
+            background: #fffaf1;
+            border: 2px solid rgba(176, 131, 55, 0.6);
+            border-radius: 120px 120px 14px 14px;
+            padding: 10px;
+            box-shadow: 0 8px 25px rgba(176, 131, 55, 0.2);
+            animation: gentleFloat 5s ease-in-out infinite;
+        }
+
+        .ceremony-hero img {
+            width: 100%;
+            height: auto;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 110px 110px 8px 8px;
+            border: 1px solid #d4af37;
+            display: block;
+        }
+
+        .ceremony-caption {
+            margin-top: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--red);
+            letter-spacing: 1px;
+        }
+
+        /* Single Combined Details Card */
+        .single-card {
+            max-width: 100%;
+            width: 100%;
+            margin: 20px auto 0;
+            background: #fffaf1;
+            border: 1px solid rgba(176, 131, 55, 0.4);
+            padding: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            text-align: left;
+        }
+
+        .single-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--red);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(176, 131, 55, 0.3);
+            text-align: center;
+        }
+
+        .detail-item {
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+        }
+
+        .detail-item strong {
+            color: var(--red);
+        }
+
+        .telugu-sub {
+            display: block;
+            margin-top: 3px;
+            font-size: 0.88rem;
+            color: #7d5a42;
+            line-height: 1.6;
+        }
+
+        /* Countdown Section */
+        .band {
+            text-align: center;
+            color: #f6e7c3;
+            background: var(--green);
+            padding: 40px 15px;
+            border-top: 4px double #caa566;
+            border-bottom: 4px double #caa566;
+            margin: 30px 0;
+        }
+
+        .clock {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 450px;
+            flex-wrap: wrap;
+        }
+
+        .unit {
+            flex: 1;
+            min-width: 70px;
+            border: 1px solid rgba(202, 165, 102, 0.4);
+            padding: 10px 5px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+        }
+
+        .unit span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .unit small {
+            font: 9px Arial, sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            background: #f4ebdc;
+        }
+
+        footer h3 {
+            font-family: 'Noto Serif Telugu', serif;
+            color: var(--red);
+            font-size: 1.3rem;
+            margin-top: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .single-card {
+                padding: 35px;
+            }
+            .ceremony-hero {
+                max-width: 750px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COVER SECTION WITH FLORAL FRAME -->
+    <section class="cover-shell" id="invitation-cover">
+        <div class="cover">
+            <svg class="floral-frame" viewBox="0 0 540 740" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <g id="marigold">
+                        <circle cx="0" cy="0" r="14" fill="#e65100"/>
+                        <circle cx="0" cy="0" r="11" fill="#f57c00" stroke="#ffb300" stroke-width="1.5" stroke-dasharray="3 2"/>
+                        <circle cx="0" cy="0" r="7" fill="#ff9800" stroke="#ffe082" stroke-width="1" stroke-dasharray="2 1.5"/>
+                        <circle cx="0" cy="0" r="3" fill="#ffca28"/>
+                    </g>
+                    <g id="jasmine">
+                        <circle cx="-4" cy="-3" r="4.5" fill="#f7f9f2" stroke="#dce4ce" stroke-width="0.8"/>
+                        <circle cx="4" cy="-3" r="4.5" fill="#ffffff" stroke="#dce4ce" stroke-width="0.8"/>
+                        <circle cx="0" cy="4" r="4.5" fill="#f2f6ea" stroke="#dce4ce" stroke-width="0.8"/>
+                        <circle cx="0" cy="0" r="2.2" fill="#9ccc65"/>
+                    </g>
+                    <g id="mango-leaf">
+                        <path d="M0,0 C-7,12 -6,28 0,38 C6,28 7,12 0,0 Z" fill="#2e6f28" stroke="#1b4d17" stroke-width="0.8"/>
+                        <path d="M0,2 L0,35" stroke="#689f38" stroke-width="0.8"/>
+                    </g>
+                </defs>
+                <g id="borders"></g>
+                <g id="top-toran"></g>
+            </svg>
+
+            <div class="cover-content">
+                <div class="telugu-mantra">ఓం నమో వేంకటేశాయ</div>
+                <div class="blessing-text">With the blessings of Lord Venkateswara Swamy</div>
+                <div class="invite-intro">YOU ARE INVITED TO THE WEDDING OF / పెళ్లి పిలుపు</div>
+                <h1 class="cover-names">
+                    <span>G. Ravi Kiran Reddy</span>
+                    <em>&amp;</em>
+                    <span>Arekuti Sai Keerthana</span>
+                </h1>
+                <div class="divider">✦</div>
+                <button type="button" class="open-btn" id="open-invitation">OPEN INVITATION / ఆహ్వానాన్ని తెರೆಯండి</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED INVITATION PAGE -->
+    <div id="invitation-page" hidden>
+        <div class="topline"></div>
+        <header>
+            <p class="smallcaps">Traditional Telugu Wedding · తెలుగు వివాహ వేడుక</p>
+            <h2 class="telugu-header">శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు</h2>
+            <nav>
+                <a href="#details">Details / వివరాలు</a>
+                <a href="#countdown-section">Muhurtham / ముహూర్తం</a>
+                <a href="#family">Family / కుటుంబ వివరాలు</a>
+            </nav>
+        </header>
+
+        <main class="wrap">
+            <!-- CEREMONY HERO BANNER SECTION -->
+            <section class="section-box" style="padding-bottom: 15px;">
+                <p class="smallcaps">Talabralu Ceremony · తలంబ్రాలు</p>
+                <h2 class="section-title">వధూవరులు</h2>
+                
+                <div class="ceremony-hero">
+                    <img src="animated_image.png" alt="G. Ravi Kiran Reddy & Arekuti Sai Keerthana Wedding Ceremony">
+                    <div class="ceremony-caption">G. Ravi Kiran Reddy &amp; Arekuti Sai Keerthana</div>
+                </div>
+            </section>
+
+            <!-- DETAILS SECTION (Single Card) -->
+            <section class="section-box" id="details">
+                <p class="smallcaps">Wedding Invitation Details</p>
+                <h2 class="section-title">వివాహ వివరాలు</h2>
+
+                <div class="single-card">
+                    <h3>Wedding Details / వివాహ వివరాలు</h3>
+                    
+                    <div class="detail-item">
+                        <strong>Groom:</strong> Chi. Ravi Kiran Reddy, M.Tech<br>
+                        (Eldest Son of Sri Gogi Reddy Venugopala Reddy &amp; Smt. Santha Kumari)
+                        <span class="telugu-sub">(వరుడు: చి. రవి కిరణ్ రెడ్డి M.Tech - మా జ్యేష్ఠ పుత్రుడు శ్రీ గొగిరెడ్డి వేణుగోపాల రెడ్డి &amp; శ్రీమతి శాంత కుమారి దంపతుల ప్రథమ పుత్రిక)</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <strong>Bride:</strong> Chi. Lak. Sow. Sai Keerthana, M.B.A<br>
+                        (Daughter of Sri Arekuti Koti Reddy &amp; Smt. Suma, Tadikonda, Guntur Dist.)
+                        <span class="telugu-sub">(వధువు: చిన్లాసౌ. సాయి కీర్తన M.B.A - గుంటూరు జిల్లా, తాడికొండ మండలం, తాడికొండ గ్రామ వాస్తవ్యులు శ్రీ అరేకుటి కోటి రెడ్డి - శ్రీమతి సుమ గారల ఏకైక పుత్రిక)</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <strong>Sumuhurtham:</strong> Wednesday, 25th November 2026 at 08:27 PM
+                        <span class="telugu-sub">(సుముహూర్తం: స్వస్తిశ్రీ చాంద్రమానేన శ్రీ పరాభవ నామ సంవత్సర కార్తీక మాసము వివాహ తిథి ది. 25-11-2026 బుధవారం రాత్రి గం. 08.27 ని॥లకు రోహిణీ నక్షత్ర యుక్త లగ్న పుష్పరాంశ సుముహూర్తమున.)</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <strong>Dinner:</strong> Wednesday, 25th November 2026 at 7:00 PM
+                        <span class="telugu-sub">(విందు భోజనం: ది. 25-11-2026 బుధవారం రాత్రి గం. 7.00 లకూ.)</span>
+                    </div>
+
+                    <div class="detail-item" style="margin-bottom: 0;">
+                        <strong>Venue:</strong> Sri Kanaka Durgadevi Kalyana Mandapam, Modukuru
+                        <span class="telugu-sub">(స్థలము: శ్రీ కనకదుర్గదేవి కల్యాణ మండపం, మోదుకూరు.)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COUNTDOWN BAND -->
+            <section class="band" id="countdown-section">
+                <p class="smallcaps">Counting the moments to forever</p>
+                <h2 lang="te">శుభ ముహూర్తం కోసం</h2>
+                <div class="clock">
+                    <div class="unit"><span id="days">00</span><small>Days</small></div>
+                    <div class="unit"><span id="hours">00</span><small>Hours</small></div>
+                    <div class="unit"><span id="minutes">00</span><small>Minutes</small></div>
+                    <div class="unit"><span id="seconds">00</span><small>Seconds</small></div>
+                </div>
+                <p style="font-size: 0.95rem;">Wednesday, 25th November 2026 at 08:27 PM</p>
+            </section>
+
+            <!-- FAMILY INVITATION & RELATIVES -->
+            <section class="section-box" id="family">
+                <p class="smallcaps">Invited By / ఆహ్వానించువారు</p>
+                <h2 class="section-title">కుటుంబ సభ్యులు</h2>
+                <div style="max-width: 650px; margin: 0 auto; text-align: center; font-size: 1rem; line-height: 1.9;">
+                    <p><strong>Sri Gogi Reddy Venugopala Reddy &amp; Smt. Santha Kumari</strong><br><span style="font-size: 0.9rem; color: var(--red);">శ్రీ గొగిరెడ్డి వేణుగోపాల రెడ్డి - శ్రీమతి శాంత కుమారి</span></p>
+                    <p style="margin-top: 12px; font-size: 0.9rem; color: #78604c;">
+                        Grandparents (Father's side) / తాతయ్య - నాయనమ్మ:<br><strong>Gogi Reddy Uma Maheswara Reddy &amp; Rama Seshamma</strong><br>గొగిరెడ్డి ఉమా మహేశ్వరరెడ్డి - రామ శేషమ్మ<br><br>
+                        Brother / తమ్ముడు: <strong>Gogi Reddy Shashi Kiran Reddy</strong><br>గొగిరెడ్డి శశి కిరణ్ రెడ్డి<br><br>
+                        Grandparents (Mother's side) / తాతయ్య - అమ్మమ్మ:<br><strong>(Late) Vinta Sanjeeva Reddy &amp; Seetharavamma</strong><br>(లేటు) వింతా సంజీవ రెడ్డి - సీతారావమ్మ<br><br>
+                        <em>Along with Best Compliments from Relatives &amp; Friends</em><br>మరియు బంధుమిత్రుల అభినందనలతో..
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="smallcaps">With Best Compliments From Near &amp; Dear</p>
+            <h3 lang="te">మీ రాక మాకెంతో ఆనందం</h3>
+            <p style="margin-top: 12px; font-size: 0.9rem;">Please grace the occasion with your family and friends and bless the newly wed couple.</p>
+        </footer>
+        <div class="bottomline"></div>
+    </div>
+
+    <script>
+        // Procedurally generate dense traditional marigold & jasmine garlands inside the SVG frame
+        (function buildFloralDecorations() {
+            const svgNS = "http://www.w3.org/2000/svg";
+            const bordersGroup = document.getElementById("borders");
+            const toranGroup = document.getElementById("top-toran");
+
+            function addUse(parent, href, x, y, scale = 1, rotate = 0) {
+                const use = document.createElementNS(svgNS, "use");
+                use.setAttributeNS("http://www.w3.org/1999/xlink", "href", href);
+                use.setAttribute("transform", `translate(${x}, ${y}) rotate(${rotate}) scale(${scale})`);
+                parent.appendChild(use);
+            }
+
+            for (let y = 20; y <= 725; y += 16) {
+                addUse(bordersGroup, "#jasmine", 26, y, 1.05, (y % 32));
+                addUse(bordersGroup, y % 80 === 20 ? "#marigold" : "#jasmine", 13, y, y % 80 === 20 ? 0.95 : 1.0, y);
+                addUse(bordersGroup, "#jasmine", 514, y, 1.05, -(y % 32));
+                addUse(bordersGroup, y % 80 === 20 ? "#marigold" : "#jasmine", 527, y, y % 80 === 20 ? 0.95 : 1.0, -y);
+            }
+
+            for (let x = 15; x <= 525; x += 16) {
+                addUse(bordersGroup, "#jasmine", x, 714, 1.05, x);
+                addUse(bordersGroup, x % 80 === 15 ? "#marigold" : "#jasmine", x, 727, x % 80 === 15 ? 0.95 : 1.0, -x);
+            }
+
+            for (let x = 12; x <= 530; x += 18) {
+                addUse(toranGroup, "#marigold", x, 12, 1.05, x * 2);
+                addUse(toranGroup, "#jasmine", x + 6, 24, 0.95, x);
+            }
+
+            const swags = [
+                { startX: 25, endX: 185, peakY: 92 },
+                { startX: 185, endX: 355, peakY: 98 },
+                { startX: 355, endX: 515, peakY: 92 }
+            ];
+
+            swags.forEach((swag) => {
+                const steps = 16;
+                for (let i = 0; i <= steps; i++) {
+                    const t = i / steps;
+                    const x = swag.startX + (swag.endX - swag.startX) * t;
+                    const arch = Math.sin(t * Math.PI);
+                    const y = 22 + arch * (swag.peakY - 22);
+
+                    if (i >= 4 && i <= 12 && i % 2 === 0) {
+                        const angle = (t - 0.5) * -55;
+                        addUse(toranGroup, "#mango-leaf", x, y + 6, 0.95, angle);
+                    }
+
+                    addUse(toranGroup, "#jasmine", x, y - 10, 0.95, i * 15);
+                    addUse(toranGroup, "#marigold", x, y, 0.98, i * 25);
+                }
+            });
+
+            const hangings = [
+                { x: 115, len: 135 },
+                { x: 185, len: 115 },
+                { x: 355, len: 115 },
+                { x: 425, len: 135 }
+            ];
+
+            hangings.forEach((h) => {
+                for (let y = 30; y <= h.len; y += 13) {
+                    addUse(toranGroup, "#jasmine", h.x, y, 0.85, y);
+                }
+                addUse(toranGroup, "#marigold", h.x, h.len + 8, 1.05, 0);
+            });
+        })();
+
+        // Click handler to open the invitation
+        const cover = document.getElementById("invitation-cover");
+        const page = document.getElementById("invitation-page");
+        const openBtn = document.getElementById("open-invitation");
+
+        openBtn.addEventListener("click", () => {
+            cover.style.display = "none";
+            page.hidden = false;
+            window.scrollTo(0, 0);
+        });
+
+        // Countdown timer targeting November 25, 2026 at 20:27:00
+        const weddingTime = new Date('2026-11-25T20:27:00').getTime();
+        function updateTimer() {
+            const now = Date.now();
+            const diff = Math.max(0, weddingTime - now);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
